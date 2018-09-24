@@ -4,8 +4,8 @@ in its most classic form:
   -- Iterate all the way through the sequence, from beginning to end.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Zachary Duncan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -81,6 +81,20 @@ def run_test_count_negatives():
     print('Test 5 expected:', expected)
     print('       actual:  ', actual)
 
+    # Test 6:
+    expected = 2
+    actual = count_negatives((8, -13, 7, -5))
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 7:
+    expected = 2
+    actual = count_negatives((12, -1, 4, -54))
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', actual)
+
     # TO DO 2 (continued):  Add your 2 ADDITIONAL tests here:
 
 
@@ -100,9 +114,14 @@ def count_negatives(seq):
       :type seq: (list | tuple) of (int | float)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+    total=0
+    for k in range(len(seq)):
+        if seq[k]<0:
+            total=total+1
+    return total
 
 
 def run_test_count_short_ones():
@@ -208,7 +227,11 @@ def count_short_ones(seq_of_lists):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    total=0
+    for k in range(len(seq_of_lists)):
+        if len(seq_of_lists[k])<3:
+            total=total+1
+    return total
 
 def run_test_draw_circles():
     """ Tests the   draw_circles   function. """
@@ -289,6 +312,11 @@ def draw_circles(window, points, radius, color):
     # TODO: 6. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
+    for point in points:
+        circle=rg.Circle(point,radius)
+        circle.fill_color=color
+        circle.attach_to(window)
+    window.render()
 
 
 # ----------------------------------------------------------------------

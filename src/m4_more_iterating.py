@@ -9,8 +9,8 @@ It also demonstrates using an ORACLE and/or PROBABILITY THEORY
 in testing and BOUNDARY (EDGE) TESTING.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Zachary Duncan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
 import builtins  # Never necessary, but here to make a point about SUM
@@ -179,7 +179,7 @@ def run_test_sum_sequence():
 
     print()
     print('Test 6: Using the following RANDOMLY generated sequence:')
-    print('   ', sequence6)
+    #print('   ', sequence6)
 
     print('  Expected results (from PROBABILITY THEORY):')
     print('    Sum:     ', expected_sum_from_probability_theory)
@@ -203,7 +203,7 @@ def sum_sequence(sequence):
       :type sequence: list or tuple (of integers)
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
@@ -212,7 +212,10 @@ def sum_sequence(sequence):
     #      -- The TESTING code above does use   built_ins.sum
     #         as an ORACLE in TESTING this function, however.
     # ------------------------------------------------------------------
-
+    total=0
+    for point in sequence:
+        total = total + point
+    return total
 
 def run_test_count_items_bigger_than():
     """ Tests the   count_items_bigger_than   function. """
@@ -381,7 +384,10 @@ def count_items_bigger_than(numbers, threshold):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    total=0
+    if num in numbers:
+        if num>threshold:
+            total=total+num
 
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """
